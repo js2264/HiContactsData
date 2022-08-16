@@ -1,0 +1,37 @@
+## Process data
+
+### Yeast data 
+
+```{shell}
+tinyMapper.sh --mode HiC --sample ~/Projects/20220816_HiContacts_datasets/data/CH324 --genome ~/genomes/S288c/S288c --output ~/Projects/20220816_HiContacts_datasets/data/HiC --threads 16
+tinyMapper.sh --mode HiC --sample /data/20210517_Christophe_MNase-RNAseq-PolII/data/HiC/CH112 --genome ~/genomes/S288c/S288c --output ~/Projects/20220816_HiContacts_datasets/data/HiC --threads 16
+chromosight detect --pattern loops --threads 16 ~/Projects/20220816_HiContacts_datasets/data/HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.cool ~/Projects/20220816_HiContacts_datasets/data/CH112_loops
+sed '1d' ~/Projects/20220816_HiContacts_datasets/data/CH112_loops.tsv | awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6}' > S288C-loops.bedpe
+chromosight detect --pattern borders --threads 16 ~/Projects/20220816_HiContacts_datasets/data/HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.cool ~/Projects/20220816_HiContacts_datasets/data/CH112_borders
+sed '1d' ~/Projects/20220816_HiContacts_datasets/data/CH112_borders.tsv | awk '{print $1"\t"$2"\t"$3}' > S288C-borders.bed
+```
+
+### mESCs data (Bonev et al 2017)
+
+```{shell}
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/000/SRR5339750/SRR5339750_1.fastq.gz -o ~/Projects/20220816_HiContacts_datasets/data/mESCs_R1.fq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/000/SRR5339750/SRR5339750_2.fastq.gz -o ~/Projects/20220816_HiContacts_datasets/data/mESC_R2.fq.gz
+tinyMapper.sh --mode HiC --sample ~/Projects/20220816_HiContacts_datasets/data/mESCs --genome ~/genomes/mm10/mm10 --output ~/Projects/20220816_HiContacts_datasets/data/HiC --threads 16
+```
+
+## Subset and compress files
+
+```{shell}
+cp ~/Projects/20220816_HiContacts_datasets/data/HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.cool ~/repos/HiContactsData/inst/extdata/S288C.cool
+cp ~/Projects/20220816_HiContacts_datasets/data/HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.mcool ~/repos/HiContactsData/inst/extdata/S288C.mcool
+cp ~/Projects/20220816_HiContacts_datasets/data/HiC/matrices/CH324/CH324^mapped_S288c^2M30JS.mcool ~/repos/HiContactsData/inst/extdata/S288C_Eco1-AID.mcool
+cp ~/Projects/20220816_HiContacts_datasets/data/HiC/matrices/mESCs/mESCs^mapped_mm10^OF4CB9.mcool ~/repos/HiContactsData/inst/extdata/mESCs.mcool
+cp ~/Projects/20220816_HiContacts_datasets/S288C-loops.bedpe ~/repos/HiContactsData/inst/extdata/S288C-loops.bedpe
+cp ~/Projects/20220816_HiContacts_datasets/S288C-borders.bed ~/repos/HiContactsData/inst/extdata/S288C-borders.bed
+grep -P '#' ~/Projects/20220816_HiContacts_datasets/data/HiC/pairs/CH112/CH112^mapped_S288c^R8GM85.valid_idx_pcrfree.pairs > ~/repos/HiContactsData/inst/extdata/S288C.pairs
+grep -P '\tII\t.*\tII\t' ~/Projects/20220816_HiContacts_datasets/data/HiC/pairs/CH112/CH112^mapped_S288c^R8GM85.valid_idx_pcrfree.pairs >> ~/repos/HiContactsData/inst/extdata/S288C.pairs
+gzip ~/repos/HiContactsData/inst/extdata/S288C.pairs
+grep -P '#' ~/Projects/20220816_HiContacts_datasets/data/HiC/pairs/CH324/CH324^mapped_S288c^2M30JS.valid_idx_pcrfree.pairs > ~/repos/HiContactsData/inst/extdata/S288C_Eco1-AID.pairs
+grep -P '\tII\t.*\tII\t' ~/Projects/20220816_HiContacts_datasets/data/HiC/pairs/CH324/CH324^mapped_S288c^2M30JS.valid_idx_pcrfree.pairs >> ~/repos/HiContactsData/inst/extdata/S288C_Eco1-AID.pairs
+gzip ~/repos/HiContactsData/inst/extdata/S288C_Eco1-AID.pairs
+```
