@@ -1,0 +1,48 @@
+---
+title: "HiContactsData"
+author: "Jacques Serizay"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+    %\VignetteIndexEntry{HiContactsData}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r, eval = TRUE, echo=FALSE, results="hide", warning=FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+suppressPackageStartupMessages({
+    library(HiContactsData)
+})
+```
+
+### HiContactsData 
+
+HiContactsData is a companion data package giving programmatic access to 
+several processed Hi-C files for demonstration, such as cool, mcool and 
+pairs files. It is meant to be used with HiContacts. 
+
+The only function provided by HiContactsData package is `HiContactsData()`. 
+Several files are avaible using this function, namely: 
+
+- S288C.cool (`sample`: `yeast_wt`, `format` = `cool`)
+- S288C.mcool (`sample`: `yeast_wt`, `format` = `mcool`)
+- S288C.pairs.gz for chrII only (`sample`: `yeast_wt`, `format` = `pairs`)
+- S288C_Eco1-AID.mcool (`sample`: `yeast_Eco1`, `format` = `mcool`)
+- S288C_Eco1-AID.pairs.gz for chrII only (`sample`: `yeast_Eco1`, `format` = `pairs`)
+- mESCs.mcool (`sample`: `mESCs`, `format` = `mcool`)
+- mESCs.pairs.gz for chr13 only (`sample`: `mESCs`, `format` = `pairs`)
+
+Yeast data comes from [Bastie, Chapard et al., Nature Structural & Molecular Biology 2022](https://doi.org/10.1038/s41594-022-00780-0) 
+and mouse ESC data comes from [Bonev et al., Cell 2017](https://doi.org/10.1016/j.cell.2017.09.043).
+
+To download one of these files, one can specify a `sample` and a file `format`:
+
+```{r}
+HiContactsDataFiles()
+cool_file <- HiContactsData(sample = 'yeast_wt', format = 'cool')
+cool_file
+```
