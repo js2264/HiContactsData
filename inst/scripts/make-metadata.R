@@ -1,0 +1,81 @@
+meta <- data.frame(
+     Title = c(
+          "WT yeast Hi-C cool", 
+          "WT yeast Hi-C mcool", 
+          "WT yeast Hi-C pairs",
+          "Eco1-AID yeast Hi-C mcool", 
+          "Eco1-AID yeast Hi-C pairs", 
+          "mESC Hi-C mcool", 
+          "mESC Hi-C pairs"
+     ), 
+     Description = c(
+          paste0("Hi-C performed on wild-type S288C yeast strain ", 
+               "processed with tinyMapper and represented as a ",
+               "single-resolution cool file. Data representation ",
+               "derived from SRA run results SRR13994279."),
+          paste0("Hi-C performed on wild-type S288C yeast strain ",
+               "processed with tinyMapper and represented as a ",
+               "multi-resolution mcool file. Data representation ",
+               "derived from SRA run results SRR13994279."),
+          paste0("Hi-C performed on wild-type S288C yeast strain ",
+               "processed with tinyMapper and represented as a ",
+               "filtered pairs file. Data representation derived ",
+               "from SRA run results SRR13994279."),
+          paste0("Hi-C performed on Eco1-AID mutant yeast strain upon IAA ",
+               "treatment processed with tinyMapper and represented as a ",
+               "multi-resolution mcool file. Data representation ",
+               "derived from SRA run results SRR16250953."),
+          paste0("Hi-C performed on Eco1-AID mutant yeast strain upon IAA ",
+               "treatment processed with tinyMapper and represented as a ",
+               "filtered pairs file. Data representation derived ",
+               "from SRA run results SRR16250953."),
+          paste0("Hi-C performed on mouse embryonic stem cells (mESCs) ",
+               "processed with tinyMapper and represented as a ",
+               "multi-resolution mcool file. Data representation ",
+               "derived from SRA run results SRR5339750."),
+          paste0("Hi-C performed on mouse embryonic stem cells (mESCs) ",
+               "processed with tinyMapper and represented as a ",
+               "filtered pairs file. Data representation derived ",
+               "from SRA run results SRR5339750.")
+     ),
+     BiocVersion = c(3.13, 3.13, 3.13, 3.13, 3.13, 3.13, 3.13),
+     Genome = c("S288C", "S288C", "S288C", "S288C", "S288C", "mm10", "mm10"), 
+     SourceType = c("HDF5", "HDF5", "TXT", "HDF5", "Zip", "HDF5", "TXT"), 
+     SourceUrl = c(
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918358",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918358",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918358",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918405",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918405",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2533818",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2533818"
+     ), 
+     SourceVersion = rep("Aug 17 2022", 7L), 
+     Species = c(
+         "Saccharomyces cerevisiae", 
+         "Saccharomyces cerevisiae",
+          "Saccharomyces cerevisiae", 
+          "Saccharomyces cerevisiae", 
+          "Saccharomyces cerevisiae",
+          "Mus musculus", 
+          "Mus musculus"
+     ), 
+     TaxonomyId = c(4932L, 4932L, 4932L, 4932L, 4932L, 10090L, 10090L), 
+     Coordinate_1_based = c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE), 
+     DataProvider = rep("Jacques Serizay", 7L),
+     Maintainer = rep("Jacques Serizay <jacquesserizay@gmail.com>", 7L), 
+     RDataClass = rep("character", 7L), 
+     DispatchClass = rep("FilePath", 7L), 
+     RDataPath = c(
+         "HiContactsData/S288C.cool",
+         "HiContactsData/S288C.mcool",
+          "HiContactsData/S288C.pairs.gz", 
+          "HiContactsData/S288C_Eco1-AID.mcool",
+          "HiContactsData/S288C_Eco1-AID.pairs.gz", 
+          "HiContactsData/mESCs.mcool",
+          "HiContactsData/mESCs.pairs.gz"
+     ),
+     Tags = rep("HiCDdata", 7L)
+)
+
+write.csv(meta, file = "inst/extdata/metadata.csv", row.names = FALSE)
