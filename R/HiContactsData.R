@@ -79,6 +79,7 @@ HiContactsDataFiles <- function() {
         c('mESCs', 'pairs.gz', 'mm10', 'mESCs', 'only pairs from chr13 are provided')
     )
     colnames(df) <- c('sample', 'format', 'genome', 'condition', 'notes')
+    df <- as.data.frame(df)
     return(df)
 }
 
