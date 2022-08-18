@@ -13,8 +13,8 @@
 
 ### -----  mESCs data (Bonev et al 2017)
 
-# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/000/SRR5339750/SRR5339750_1.fastq.gz -o mESCs_R1.fq.gz
-# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/000/SRR5339750/SRR5339750_2.fastq.gz -o mESC_R2.fq.gz
+# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/009/SRR5339749/SRR5339749_1.fastq.gz -o mESCs_R1.fq.gz
+# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/009/SRR5339749/SRR5339749_2.fastq.gz -o mESC_R2.fq.gz
 # tinyMapper.sh --mode HiC --sample mESCs --genome ~/genomes/mm10/mm10 --output HiC --threads 16 --resolutions 10000,20000,40000,80000,160000,320000,640000,1280000,2560000
 
 ### ----------  Subset and compress files
@@ -22,7 +22,7 @@
 # cp HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.cool S288C.cool
 # cp HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.mcool S288C.mcool
 # cp HiC/matrices/CH324/CH324^mapped_S288c^2M30JS.mcool S288C_Eco1-AID.mcool
-# cp HiC/matrices/mESCs/mESCs^mapped_mm10^OF4CB9.mcool mESCs.mcool
+# cp HiC/matrices/mESCs/mESCs^mapped_mm10^4VHP0A.mcool mESCs.mcool
 # cp ~/Projects/20220816_HiContacts_datasets/S288C-loops.bedpe S288C-loops.bedpe
 # cp ~/Projects/20220816_HiContacts_datasets/S288C-borders.bed S288C-borders.bed
 # grep -P '#' HiC/pairs/CH112/CH112^mapped_S288c^R8GM85.valid_idx_pcrfree.pairs > S288C.pairs
@@ -31,3 +31,6 @@
 # grep -P '#' HiC/pairs/CH324/CH324^mapped_S288c^2M30JS.valid_idx_pcrfree.pairs > S288C_Eco1-AID.pairs
 # grep -P '\tII\t.*\tII\t' HiC/pairs/CH324/CH324^mapped_S288c^2M30JS.valid_idx_pcrfree.pairs >> S288C_Eco1-AID.pairs
 # gzip S288C_Eco1-AID.pairs
+# grep -P '#' HiC/pairs/mESCs/mESCs^mapped_mm10^4VHP0A.valid_idx_pcrfree.pairs > mESCs.pairs
+# grep -P '\tchr13\t.*\tchr13\t' HiC/pairs/mESCs/mESCs^mapped_mm10^4VHP0A.valid_idx_pcrfree.pairs >> mESCs.pairs
+# gzip mESCs.pairs

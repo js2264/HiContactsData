@@ -32,13 +32,13 @@ meta <- data.frame(
           paste0("Hi-C performed on mouse embryonic stem cells (mESCs) ",
                "processed with tinyMapper and represented as a ",
                "multi-resolution mcool file. Data representation ",
-               "derived from SRA run results SRR5339750."),
+               "derived from SRA run results SRR5339749."),
           paste0("Hi-C performed on mouse embryonic stem cells (mESCs) ",
                "processed with tinyMapper and represented as a ",
                "filtered pairs file. Data representation derived ",
-               "from SRA run results SRR5339750.")
+               "from SRA run results SRR5339749.")
      ),
-     BiocVersion = c(3.13, 3.13, 3.13, 3.13, 3.13, 3.13, 3.13),
+     BiocVersion = c(3.16, 3.16, 3.16, 3.16, 3.16, 3.16, 3.16),
      Genome = c("S288C", "S288C", "S288C", "S288C", "S288C", "mm10", "mm10"), 
      SourceType = c("HDF5", "HDF5", "TXT", "HDF5", "Zip", "HDF5", "TXT"), 
      SourceUrl = c(
