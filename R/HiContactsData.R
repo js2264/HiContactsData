@@ -53,7 +53,7 @@ HiContactsData <- function(sample, format) {
     res <- ehub[[ehub_entry]]
     file <- file.path(AnnotationHub::hubCache(ehub), paste(sample, format, sep = '.'))
     system(paste0('rm -rf ', file))
-    file.symlink(file.path(AnnotationHub::hubCache(ehub), res), file)
+    file.symlink(res, file)
     return(file)
 }
 
