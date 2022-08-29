@@ -1,3 +1,3 @@
 library(testthat)
-library(HiContactsData)
+# library(HiContactsData)
 test_check("HiContactsData")

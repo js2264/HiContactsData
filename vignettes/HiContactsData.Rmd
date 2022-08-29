@@ -19,11 +19,11 @@ suppressPackageStartupMessages({
 })
 ```
 
-### HiContactsData 
+## Introduction to HiContactsData 
 
 HiContactsData is a companion data package giving programmatic access to 
 several processed Hi-C files for demonstration, such as cool, mcool and 
-pairs files. It is meant to be used with HiContacts. 
+pairs files. It is meant to be used with `HiContacts`. 
 
 The only function provided by HiContactsData package is `HiContactsData()`. 
 Several files are avaible using this function, namely: 
@@ -45,4 +45,15 @@ To download one of these files, one can specify a `sample` and a file `format`:
 HiContactsDataFiles()
 cool_file <- HiContactsData(sample = 'yeast_wt', format = 'cool')
 cool_file
+```
+
+## HiContacts and HiContactsData
+
+`HiContacts` package can be used to import data provided by `HiContactsData`. 
+Refer to `HiContacts` package documentation for further information. 
+
+## Session info
+
+```{r}
+sessionInfo()
 ```

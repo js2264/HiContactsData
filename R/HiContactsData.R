@@ -26,34 +26,33 @@ HiContactsData <- function(sample, format) {
         'Available choices: "cool", "mcool", "pairs.gz".'
     ))
     if (sample == 'yeast_wt' & format == 'cool') {
-        ehub_entry <- 'EH5434'
+        ehub_entry <- 'EH7701'
     } 
     else if (sample == 'yeast_wt' & format == 'mcool') {
-        ehub_entry <- 'EH5434'
+        ehub_entry <- 'EH7702'
     } 
     else if (sample == 'yeast_wt' & format == 'pairs.gz') {
-        ehub_entry <- 'EH5434'
+        ehub_entry <- 'EH7703'
     } 
     else if (sample == 'yeast_eco1' & format == 'mcool') {
-        ehub_entry <- 'EH5434'
+        ehub_entry <- 'EH7704'
     } 
     else if (sample == 'yeast_eco1' & format == 'pairs.gz') {
-        ehub_entry <- 'EH5434'
+        ehub_entry <- 'EH7705'
     } 
     else if (sample == 'mESCs' & format == 'mcool') {
-        ehub_entry <- 'EH5434'
+        ehub_entry <- 'EH7706'
     } 
     else if (sample == 'mESCs' & format == 'pairs.gz') {
-        ehub_entry <- 'EH5434'
+        ehub_entry <- 'EH7707'
     } 
     else {
         stop('Unknown combination of `sample` and `format`. Check `HiContactsDataFiles() for more info.`')
     }
     ehub <- ExperimentHub::ExperimentHub()
-    # res <- ehub[[ehub_entry]]
-    res <- '6d144243feb9_5377'
+    res <- ehub[[ehub_entry]]
     file <- file.path(AnnotationHub::hubCache(ehub), paste(sample, format, sep = '.'))
-    if (file.exists(file)) unlink(file)
+    system(paste0('rm -rf ', file))
     file.symlink(file.path(AnnotationHub::hubCache(ehub), res), file)
     return(file)
 }
