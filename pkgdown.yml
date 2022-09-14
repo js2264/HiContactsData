@@ -1,7 +1,10 @@
-pandoc: '2.13'
-pkgdown: 2.0.6
-pkgdown_sha: ~
+pandoc: '2.18'
+pkgdown: 2.0.6.9000
+pkgdown_sha: 956f076f661eb2de9413f64ea24a580cf444466d
 articles:
   HiContactsData: HiContactsData.html
-last_built: 2022-09-13T14:40Z
+last_built: 2022-09-14T09:19Z
+urls:
+  reference: http://jserizay.com/HiContactsData/reference
+  article: http://jserizay.com/HiContactsData/articles
 
