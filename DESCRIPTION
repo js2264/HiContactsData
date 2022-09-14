@@ -1,6 +1,6 @@
 Package: HiContactsData
 Title: HiContacts companion data package
-Version: 0.99.1
+Version: 0.99.2
 Date: 2022-08-16
 Authors@R: 
     person(given = "Jacques",
@@ -21,7 +21,6 @@ Imports:
     BiocFileCache, 
     AnnotationHub
 Suggests:
-    HiContacts,
     testthat, 
     methods,
     knitr, 
