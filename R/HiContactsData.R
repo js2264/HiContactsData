@@ -14,72 +14,27 @@
 #' @examples
 #' HiContactsData(sample = 'yeast_wt', format = 'cool')
 
-HiContactsData <- function(sample, format) {
-    samples <- c('yeast_wt', 'yeast_eco1', 'mESCs')
-    formats <- c('cool', 'mcool', 'pairs.gz')
-    if (!sample %in% samples) stop(message(
-        'Please select a valid sample. ', 
-        'Available choices: "yeast_wt", "yeast_eco1", "mESCs".'
-    ))
-    if (!format %in% formats) stop(message(
-        'Please select a valid format. ', 
-        'Available choices: "cool", "mcool", "pairs.gz".'
-    ))
-    if (sample == 'yeast_wt' & format == 'cool') {
-        ehub_entry <- 'EH7701'
-    } 
-    else if (sample == 'yeast_wt' & format == 'mcool') {
-        ehub_entry <- 'EH7702'
-    } 
-    else if (sample == 'yeast_wt' & format == 'pairs.gz') {
-        ehub_entry <- 'EH7703'
-    } 
-    else if (sample == 'yeast_eco1' & format == 'mcool') {
-        ehub_entry <- 'EH7704'
-    } 
-    else if (sample == 'yeast_eco1' & format == 'pairs.gz') {
-        ehub_entry <- 'EH7705'
-    } 
-    else if (sample == 'mESCs' & format == 'mcool') {
-        ehub_entry <- 'EH7706'
-    } 
-    else if (sample == 'mESCs' & format == 'pairs.gz') {
-        ehub_entry <- 'EH7707'
-    } 
-    else {
-        stop('Unknown combination of `sample` and `format`. Check `HiContactsDataFiles() for more info.`')
+HiContactsData <- function(sample = NULL, format = NULL) {
+    ehub_entry <- HiContactsDataFiles[
+        which(HiContactsDataFiles$sample == sample & 
+            HiContactsDataFiles$format == format), 
+        "EHID"
+    ]
+    if (length(ehub_entry) == 0) {
+        message('Available files: \n')
+        print(HiContactsDataFiles)
+        message('')
+        if (!is.null(sample) | !is.null(format)) {
+            stop('Unknown combination of `sample` and `format`.\n  ', 
+                'Please check which files are available from ', 
+                'the data frame printed above.'
+            )
+        } 
+        else {
+            return()
+        }
     }
     ehub <- ExperimentHub::ExperimentHub()
     res <- ehub[[ehub_entry]]
-    file <- file.path(AnnotationHub::hubCache(ehub), paste(sample, format, sep = '.'))
-    system(paste0('rm -rf ', file))
-    file.symlink(res, file)
-    return(file)
+    return(res)
 }
-
-#' HiContactsDataFiles
-#'
-#' @description List of all available files provided by HiContactsData.
-#' 
-#' @return data.frame
-#' @export
-#' 
-#' @examples
-#' HiContactsDataFiles()
-
-HiContactsDataFiles <- function() {
-    df <- rbind(
-        c('yeast_wt', 'cool', 'S288C', 'wild-type', 'cool file @ resolution of 1kb'),
-        c('yeast_wt', 'mcool', 'S288C', 'wild-type', 'multi-res mcool file'),
-        c('yeast_wt', 'pairs.gz', 'S288C', 'wild-type', 'only pairs from chrII are provided'),
-        c('yeast_eco1', 'mcool', 'S288C', 'Eco1-AID+IAA', 'multi-res mcool file'),
-        c('yeast_eco1', 'pairs.gz', 'S288C', 'Eco1-AID+IAA', 'only pairs from chrII are provided'),
-        c('mESCs', 'mcool', 'mm10', 'mESCs', 'multi-res mcool file'),
-        c('mESCs', 'pairs.gz', 'mm10', 'mESCs', 'only pairs from chr13 are provided')
-    )
-    colnames(df) <- c('sample', 'format', 'genome', 'condition', 'notes')
-    df <- as.data.frame(df)
-    return(df)
-}
-
-

@@ -4,7 +4,7 @@
 \alias{HiContactsData}
 \title{HiContactsData}
 \usage{
-HiContactsData(sample, format)
+HiContactsData(sample = NULL, format = NULL)
 }
 \arguments{
 \item{sample}{sample}
