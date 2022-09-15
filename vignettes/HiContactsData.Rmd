@@ -2,7 +2,8 @@
 title: "HiContactsData"
 author: "Jacques Serizay"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+    BiocStyle::html_document
 vignette: >
     %\VignetteIndexEntry{HiContactsData}
     %\VignetteEngine{knitr::rmarkdown}
