@@ -14,7 +14,7 @@ Description:
     the Pasteur Institute.
 License: MIT + file LICENSE
 URL: https://github.com/js2264/HiContactsData
-BugReports: https://support.bioconductor.org/t/HiContactsData
+BugReports: https://github.com/js2264/HiContactsData/issues
 Depends:
     ExperimentHub
 Imports: 
