@@ -1,7 +1,7 @@
 #' HiContactsData
 #'
 #' @description Downloads different types of Hi-C processed files 
-#'   (cool, mcool, pairs.gz) and returns the path of the cached file. 
+#'   (cool, mcool, pairs.gz, fastq) and returns the path of the cached file. 
 #' @param sample sample
 #' @param format format
 #' 

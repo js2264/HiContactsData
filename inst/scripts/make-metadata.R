@@ -6,7 +6,9 @@ meta <- data.frame(
           "Eco1-AID yeast Hi-C mcool", 
           "Eco1-AID yeast Hi-C pairs", 
           "mESC Hi-C mcool", 
-          "mESC Hi-C pairs"
+          "mESC Hi-C pairs",
+          "WT yeast Hi-C paired-end seq reads (R1)",
+          "WT yeast Hi-C paired-end seq reads (R2)"
      ), 
      Description = c(
           paste0("Hi-C performed on wild-type S288C yeast strain ", 
@@ -36,11 +38,20 @@ meta <- data.frame(
           paste0("Hi-C performed on mouse embryonic stem cells (mESCs) ",
                "processed with tinyMapper and represented as a ",
                "filtered pairs file. Data representation derived ",
-               "from SRA run results SRR5339749.")
+               "from SRA run results SRR5339749."),
+          paste0("Hi-C performed on wild-type S288C yeast strain. ",
+               "Only the first 100,000 reads from R1 are recovered. ",
+               "Data recovered from SRA run results SRR13994279."),
+          paste0("Hi-C performed on wild-type S288C yeast strain. ",
+               "Only the first 100,000 reads from R2 are recovered. ",
+               "Data recovered from SRA run results SRR13994279.")
      ),
-     BiocVersion = c(3.16, 3.16, 3.16, 3.16, 3.16, 3.16, 3.16),
-     Genome = c("S288C", "S288C", "S288C", "S288C", "S288C", "mm10", "mm10"), 
-     SourceType = c("HDF5", "HDF5", "TXT", "HDF5", "Zip", "HDF5", "TXT"), 
+     BiocVersion = c(3.16, 3.16, 3.16, 3.16, 3.16, 3.16, 3.16, 3.16, 3.16),
+     Genome = c(
+          "S288C", "S288C", "S288C", "S288C", "S288C", "mm10", "mm10",
+          "S288C", "S288C"
+     ), 
+     SourceType = c("HDF5", "HDF5", "TXT", "HDF5", "Zip", "HDF5", "TXT", "TXT", "TXT"), 
      SourceUrl = c(
           "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918358",
           "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918358",
@@ -48,9 +59,11 @@ meta <- data.frame(
           "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918405",
           "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918405",
           "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2533818",
-          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2533818"
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2533818",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918358",
+          "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5918358"
      ), 
-     SourceVersion = rep("Aug 17 2022", 7L), 
+     SourceVersion = rep("Aug 17 2022", 9L), 
      Species = c(
          "Saccharomyces cerevisiae", 
          "Saccharomyces cerevisiae",
@@ -58,14 +71,16 @@ meta <- data.frame(
           "Saccharomyces cerevisiae", 
           "Saccharomyces cerevisiae",
           "Mus musculus", 
-          "Mus musculus"
+          "Mus musculus",
+          "Saccharomyces cerevisiae", 
+          "Saccharomyces cerevisiae"
      ), 
-     TaxonomyId = c(4932L, 4932L, 4932L, 4932L, 4932L, 10090L, 10090L), 
-     Coordinate_1_based = c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE), 
-     DataProvider = rep("Jacques Serizay", 7L),
-     Maintainer = rep("Jacques Serizay <jacquesserizay@gmail.com>", 7L), 
-     RDataClass = rep("character", 7L), 
-     DispatchClass = rep("FilePath", 7L), 
+     TaxonomyId = c(4932L, 4932L, 4932L, 4932L, 4932L, 10090L, 10090L, 4932L, 4932L), 
+     Coordinate_1_based = c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE), 
+     DataProvider = rep("Jacques Serizay", 9L),
+     Maintainer = rep("Jacques Serizay <jacquesserizay@gmail.com>", 9L), 
+     RDataClass = rep("character", 9L), 
+     DispatchClass = rep("FilePath", 9L), 
      RDataPath = c(
          "HiContactsData/S288C.cool",
          "HiContactsData/S288C.mcool",
@@ -73,9 +88,11 @@ meta <- data.frame(
           "HiContactsData/S288C_Eco1-AID.mcool",
           "HiContactsData/S288C_Eco1-AID.pairs.gz", 
           "HiContactsData/mESCs.mcool",
-          "HiContactsData/mESCs.pairs.gz"
+          "HiContactsData/mESCs.pairs.gz",
+          "HiContactsData/HiC_wt_yeast.R1.fq.gz",
+          "HiContactsData/HiC_wt_yeast.R2.fq.gz"
      ),
-     Tags = rep("HiCDdata", 7L)
+     Tags = rep("HiCDdata", 9L)
 )
 
 write.csv(meta, file = "inst/extdata/metadata.csv", row.names = FALSE)

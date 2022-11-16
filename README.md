@@ -19,6 +19,7 @@ Several files are avaible using this function, namely:
   - S288C.pairs.gz for chrII only (`sample`: `yeast_wt`, `format` = `pairs`)
   - S288C_Eco1-AID.mcool (`sample`: `yeast_Eco1`, `format` = `mcool`)
   - S288C_Eco1-AID.pairs.gz for chrII only (`sample`: `yeast_Eco1`, `format` = `pairs`)
+  - S288C fastq files (R1 & R2) (`sample`: `yeast_wt`, `format` = `fastq_R{12}`)
 
 - From [Bonev et al., Cell 2017](https://doi.org/10.1016/j.cell.2017.09.043):
   - mESCs.mcool (`sample`: `mESCs`, `format` = `mcool`)
