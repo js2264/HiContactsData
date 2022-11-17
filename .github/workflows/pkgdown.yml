@@ -14,7 +14,7 @@ jobs:
   pkgdown:
 
     runs-on: ubuntu-latest
-    name: ubuntu-latest r 4.2 bioc 3.16
+    name: ubuntu-latest  devel bioc devel
     container: bioconductor/bioconductor_docker:devel
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -45,8 +45,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: /home/runner/work/_temp/Library
-          key: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-4.2-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-4.2-
+          key: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-devel-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-biocversion-devel-r-devel-
 
       - name: Install Linux system dependencies
         run: |
@@ -62,7 +62,7 @@ jobs:
 
       - name: Set BiocVersion
         run: |
-          BiocManager::install(version = "${{ 3.16 }}", ask = FALSE, force = TRUE)
+          BiocManager::install(version = "devel", ask = FALSE, force = TRUE)
         shell: Rscript {0}
 
       - name: Install dependencies pass 1
@@ -70,7 +70,7 @@ jobs:
           gha_repos <- if(
               .Platform$OS.type == "unix" && Sys.info()["sysname"] != "Darwin"
           ) c(
-              "AnVIL" = "https://bioconductordocker.blob.core.windows.net/packages/3.16/bioc",
+              "AnVIL" = "https://bioconductordocker.blob.core.windows.net/packages/devel/bioc",
               BiocManager::repositories()
               ) else BiocManager::repositories()
           message(paste('****', Sys.time(), 'installing rcmdcheck and BiocCheck ****'))

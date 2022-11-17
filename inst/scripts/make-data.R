@@ -1,11 +1,11 @@
 ### ----- Yeast data (Bastie, Chapard et al 2022)
 
-# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR162/053/SRR16250953/SRR16250953_1.fastq.gz -o CH324_R1.fq.gz
-# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR162/053/SRR16250953/SRR16250953_2.fastq.gz -o CH324_R2.fq.gz
 # curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR139/079/SRR13994279/SRR13994279_1.fastq.gz -o CH112_R1.fq.gz
 # curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR139/079/SRR13994279/SRR13994279_2.fastq.gz -o CH112_R2.fq.gz
-# tinyMapper.sh --mode HiC --sample CH324 --genome ~/genomes/S288c/S288c --output HiC --threads 16
+# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR162/053/SRR16250953/SRR16250953_1.fastq.gz -o CH324_R1.fq.gz
+# curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR162/053/SRR16250953/SRR16250953_2.fastq.gz -o CH324_R2.fq.gz
 # tinyMapper.sh --mode HiC --sample CH112 --genome ~/genomes/S288c/S288c --output HiC --threads 16
+# tinyMapper.sh --mode HiC --sample CH324 --genome ~/genomes/S288c/S288c --output HiC --threads 16
 # chromosight detect --pattern loops --threads 16 HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.cool CH112_loops
 # sed '1d' CH112_loops.tsv | awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6}' > S288C-loops.bedpe
 # chromosight detect --pattern borders --threads 16 HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.cool CH112_borders
