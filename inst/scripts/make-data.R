@@ -19,6 +19,8 @@
 
 ### ----------  Subset and compress files
 
+# zcat CH112_R1.fq.gz | head -n 400000 | gzip > HiC_wt_yeast.R1.fq.gz
+# zcat CH112_R2.fq.gz | head -n 400000 | gzip > HiC_wt_yeast.R2.fq.gz
 # cp HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.cool S288C.cool
 # cp HiC/matrices/CH112/CH112^mapped_S288c^R8GM85.mcool S288C.mcool
 # cp HiC/matrices/CH324/CH324^mapped_S288c^2M30JS.mcool S288C_Eco1-AID.mcool
