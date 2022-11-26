@@ -36,3 +36,6 @@
 # grep -P '#' HiC/pairs/mESCs/mESCs^mapped_mm10^4VHP0A.valid_idx_pcrfree.pairs > mESCs.pairs
 # grep -P '\tchr13\t.*\tchr13\t' HiC/pairs/mESCs/mESCs^mapped_mm10^4VHP0A.valid_idx_pcrfree.pairs >> mESCs.pairs
 # gzip mESCs.pairs
+
+### ----------  Process data with HiCool
+# HiCool::HiCool('HiC_wt_yeast.R1.fq.gz', 'HiC_wt_yeast.R2.fq.gz', '~/genomes/S288c/S288c', output = '.')

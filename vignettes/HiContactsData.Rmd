@@ -34,6 +34,7 @@ The only function provided by HiContactsData package is `HiContactsData()`.
 Several files are avaible using this function, namely: 
 
 - S288C fastq files (R1 & R2) (`sample`: `yeast_wt`, `format` = `fastq_R{12}`)
+- S288C HiCool processing log (`sample`: `yeast_wt`, `format` = `HiCool_log`)
 - S288C.pairs.gz for chrII only (`sample`: `yeast_wt`, `format` = `pairs`)
 - S288C.cool (`sample`: `yeast_wt`, `format` = `cool`)
 - S288C.mcool (`sample`: `yeast_wt`, `format` = `mcool`)
@@ -55,8 +56,8 @@ cool_file
 
 ## HiContacts and HiContactsData
 
-`HiContacts` package can be used to import data provided by `HiContactsData`. 
-Refer to `HiContacts` package documentation for further information. 
+`HiCExperiment` package can be used to import data provided by `HiContactsData`. 
+Refer to `HiCExperiment` package documentation for further information. 
 
 ## Session info
 

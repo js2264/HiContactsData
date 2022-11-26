@@ -14,12 +14,13 @@ The only function provided by HiContactsData package is `HiContactsData()`.
 Several files are avaible using this function, namely: 
 
 - From [Bastie, Chapard et al., Nature Structural & Molecular Biology 2022](https://doi.org/10.1038/s41594-022-00780-0):
+  - S288C fastq files (R1 & R2) (`sample`: `yeast_wt`, `format` = `fastq_R{12}`)
+  - S288C HiCool processing log (`sample`: `yeast_wt`, `format` = `HiCool_log`)
   - S288C.cool (`sample`: `yeast_wt`, `format` = `cool`)
   - S288C.mcool (`sample`: `yeast_wt`, `format` = `mcool`)
   - S288C.pairs.gz for chrII only (`sample`: `yeast_wt`, `format` = `pairs`)
   - S288C_Eco1-AID.mcool (`sample`: `yeast_Eco1`, `format` = `mcool`)
   - S288C_Eco1-AID.pairs.gz for chrII only (`sample`: `yeast_Eco1`, `format` = `pairs`)
-  - S288C fastq files (R1 & R2) (`sample`: `yeast_wt`, `format` = `fastq_R{12}`)
 
 - From [Bonev et al., Cell 2017](https://doi.org/10.1016/j.cell.2017.09.043):
   - mESCs.mcool (`sample`: `mESCs`, `format` = `mcool`)
