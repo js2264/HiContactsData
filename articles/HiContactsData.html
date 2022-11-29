@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">HiContactsData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.5</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +69,7 @@
                         <h4 data-toc-skip class="author">Jacques
 Serizay</h4>
             
-            <h4 data-toc-skip class="date">2022-11-26</h4>
+            <h4 data-toc-skip class="date">2022-11-29</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/js2264/HiContactsData/blob/HEAD/vignettes/HiContactsData.Rmd" class="external-link"><code>vignettes/HiContactsData.Rmd</code></a></small>
       <div class="d-none name"><code>HiContactsData.Rmd</code></div>
@@ -96,12 +96,18 @@ function, namely:</p>
 <li>S288C HiCool processing log (<code>sample</code>:
 <code>yeast_wt</code>, <code>format</code> =
 <code>HiCool_log</code>)</li>
-<li>S288C.pairs.gz for chrII only (<code>sample</code>:
-<code>yeast_wt</code>, <code>format</code> = <code>pairs</code>)</li>
 <li>S288C.cool (<code>sample</code>: <code>yeast_wt</code>,
 <code>format</code> = <code>cool</code>)</li>
 <li>S288C.mcool (<code>sample</code>: <code>yeast_wt</code>,
 <code>format</code> = <code>mcool</code>)</li>
+<li>S288C.hic (<code>sample</code>: <code>yeast_wt</code>,
+<code>format</code> = <code>hic</code>)</li>
+<li>S288C.hicpro.matrix (<code>sample</code>: <code>yeast_wt</code>,
+<code>format</code> = <code>hicpro_matrix</code>)</li>
+<li>S288C.hicpro.bed (<code>sample</code>: <code>yeast_wt</code>,
+<code>format</code> = <code>hicpro_bed</code>)</li>
+<li>S288C.pairs.gz for chrII only (<code>sample</code>:
+<code>yeast_wt</code>, <code>format</code> = <code>pairs</code>)</li>
 <li>S288C_Eco1-AID.mcool (<code>sample</code>: <code>yeast_Eco1</code>,
 <code>format</code> = <code>mcool</code>)</li>
 <li>S288C_Eco1-AID.pairs.gz for chrII only (<code>sample</code>:
@@ -120,36 +126,42 @@ and a file <code>format</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cool_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/HiContactsData.html">HiContactsData</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Available files:</span></span>
-<span><span class="co">#&gt;        sample     format genome    condition                              notes</span></span>
-<span><span class="co">#&gt; 1    yeast_wt       cool  S288C    wild-type      cool file @ resolution of 1kb</span></span>
-<span><span class="co">#&gt; 2    yeast_wt      mcool  S288C    wild-type               multi-res mcool file</span></span>
-<span><span class="co">#&gt; 3    yeast_wt   pairs.gz  S288C    wild-type only pairs from chrII are provided</span></span>
-<span><span class="co">#&gt; 4    yeast_wt HiCool_log  S288C    wild-type                    HiCool log file</span></span>
-<span><span class="co">#&gt; 5    yeast_wt   fastq_R1  S288C    wild-type                         fastq (R1)</span></span>
-<span><span class="co">#&gt; 6    yeast_wt   fastq_R2  S288C    wild-type                         fastq (R2)</span></span>
-<span><span class="co">#&gt; 7  yeast_eco1      mcool  S288C Eco1-AID+IAA               multi-res mcool file</span></span>
-<span><span class="co">#&gt; 8  yeast_eco1   pairs.gz  S288C Eco1-AID+IAA only pairs from chrII are provided</span></span>
-<span><span class="co">#&gt; 9       mESCs      mcool   mm10        mESCs               multi-res mcool file</span></span>
-<span><span class="co">#&gt; 10      mESCs   pairs.gz   mm10        mESCs only pairs from chr13 are provided</span></span>
-<span><span class="co">#&gt;      EHID</span></span>
-<span><span class="co">#&gt; 1  EH7701</span></span>
-<span><span class="co">#&gt; 2  EH7702</span></span>
-<span><span class="co">#&gt; 3  EH7703</span></span>
-<span><span class="co">#&gt; 4       .</span></span>
-<span><span class="co">#&gt; 5       .</span></span>
-<span><span class="co">#&gt; 6       .</span></span>
-<span><span class="co">#&gt; 7  EH7704</span></span>
-<span><span class="co">#&gt; 8  EH7705</span></span>
-<span><span class="co">#&gt; 9  EH7706</span></span>
-<span><span class="co">#&gt; 10 EH7707</span></span>
+<span><span class="co">#&gt;        sample        format genome    condition</span></span>
+<span><span class="co">#&gt; 1    yeast_wt          cool  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 2    yeast_wt         mcool  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 3    yeast_wt           hic  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 4    yeast_wt hicpro_matrix  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 5    yeast_wt    hicpro_bed  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 6    yeast_wt      pairs.gz  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 7    yeast_wt    HiCool_log  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 8    yeast_wt      fastq_R1  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 9    yeast_wt      fastq_R2  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 10 yeast_eco1         mcool  S288C Eco1-AID+IAA</span></span>
+<span><span class="co">#&gt; 11 yeast_eco1      pairs.gz  S288C Eco1-AID+IAA</span></span>
+<span><span class="co">#&gt; 12      mESCs         mcool   mm10        mESCs</span></span>
+<span><span class="co">#&gt; 13      mESCs      pairs.gz   mm10        mESCs</span></span>
+<span><span class="co">#&gt;                                 notes   EHID</span></span>
+<span><span class="co">#&gt; 1       cool file @ resolution of 1kb EH7701</span></span>
+<span><span class="co">#&gt; 2                multi-res mcool file EH7702</span></span>
+<span><span class="co">#&gt; 3                 multi-res .hic file      .</span></span>
+<span><span class="co">#&gt; 4           HiC-Pro matrix file @ 1kb      .</span></span>
+<span><span class="co">#&gt; 5              HiC-Pro bed file @ 1kb      .</span></span>
+<span><span class="co">#&gt; 6  only pairs from chrII are provided EH7703</span></span>
+<span><span class="co">#&gt; 7                     HiCool log file      .</span></span>
+<span><span class="co">#&gt; 8                          fastq (R1)      .</span></span>
+<span><span class="co">#&gt; 9                          fastq (R2)      .</span></span>
+<span><span class="co">#&gt; 10               multi-res mcool file EH7704</span></span>
+<span><span class="co">#&gt; 11 only pairs from chrII are provided EH7705</span></span>
+<span><span class="co">#&gt; 12               multi-res mcool file EH7706</span></span>
+<span><span class="co">#&gt; 13 only pairs from chr13 are provided EH7707</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="va">cool_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/HiContactsData.html">HiContactsData</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="st">'yeast_wt'</span>, format <span class="op">=</span> <span class="st">'cool'</span><span class="op">)</span></span>
-<span><span class="co">#&gt; snapshotDate(): 2022-11-21</span></span>
+<span><span class="co">#&gt; snapshotDate(): 2022-11-29</span></span>
 <span><span class="co">#&gt; see ?HiContactsData and browseVignettes('HiContactsData') for documentation</span></span>
 <span><span class="co">#&gt; loading from cache</span></span>
 <span><span class="va">cool_file</span></span>
 <span><span class="co">#&gt;                                                 EH7701 </span></span>
-<span><span class="co">#&gt; "/github/home/.cache/R/ExperimentHub/4534b206cae_7751"</span></span></code></pre></div>
+<span><span class="co">#&gt; "/github/home/.cache/R/ExperimentHub/3b35c5149f6_7751"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="hicontacts-and-hicontactsdata">HiContacts and HiContactsData<a class="anchor" aria-label="anchor" href="#hicontacts-and-hicontactsdata"></a>
@@ -187,7 +199,7 @@ information.</p>
 <span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt; [1] HiContactsData_1.1.4 ExperimentHub_2.7.0  AnnotationHub_3.7.0 </span></span>
+<span><span class="co">#&gt; [1] HiContactsData_1.1.5 ExperimentHub_2.7.0  AnnotationHub_3.7.0 </span></span>
 <span><span class="co">#&gt; [4] BiocFileCache_2.7.0  dbplyr_2.2.1         BiocGenerics_0.45.0 </span></span>
 <span><span class="co">#&gt; [7] BiocStyle_2.27.0    </span></span>
 <span><span class="co">#&gt; </span></span>
@@ -222,7 +234,7 @@ information.</p>
 <span><span class="co">#&gt; [55] promises_1.2.0.1              rappdirs_0.3.3               </span></span>
 <span><span class="co">#&gt; [57] bit64_4.0.5                   XVector_0.39.0               </span></span>
 <span><span class="co">#&gt; [59] rmarkdown_2.18                httr_1.4.4                   </span></span>
-<span><span class="co">#&gt; [61] bit_4.0.5                     png_0.1-7                    </span></span>
+<span><span class="co">#&gt; [61] bit_4.0.5                     png_0.1-8                    </span></span>
 <span><span class="co">#&gt; [63] ragg_1.2.4                    memoise_2.0.1                </span></span>
 <span><span class="co">#&gt; [65] shiny_1.7.3                   evaluate_0.18                </span></span>
 <span><span class="co">#&gt; [67] knitr_1.41                    IRanges_2.33.0               </span></span>
