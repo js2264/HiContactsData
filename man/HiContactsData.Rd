@@ -16,7 +16,7 @@ Local path of the queried file cached with BiocFileCache.
 }
 \description{
 Downloads different types of Hi-C processed files
-(cool, mcool, pairs.gz) and returns the path of the cached file.
+(cool, mcool, pairs.gz, fastq) and returns the path of the cached file.
 }
 \examples{
 HiContactsData(sample = 'yeast_wt', format = 'cool')
