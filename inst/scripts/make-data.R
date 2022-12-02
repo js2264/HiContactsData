@@ -38,15 +38,18 @@
 # gzip mESCs.pairs
 
 ### ----------  Process data with HiCool
+
 # Rscript -e "HiCool::HiCool('HiC_wt_yeast.R1.fq.gz', 'HiC_wt_yeast.R2.fq.gz', '~/genomes/S288c/S288c', output = '.')"
 
 ### ----------  Generate .hic file
+
 # grep -v "^#" /HiC/pairs/CH112/CH112^mapped_S288c^R8GM85.valid_idx_filtered.pairs | sort -k2,2 -k4,4 -k3,3n -k5,5n > sorted.pairs
 # grep "^#" /HiC/pairs/CH112/CH112^mapped_S288c^R8GM85.valid_idx_filtered.pairs > header
 # paste header sorted.pairs > CH112^mapped_S288c^R8GM85.valid_idx_filtered.pairs
 # juicer_tools pre -r 1000,2000,4000,8000,16000 CH112^mapped_S288c^R8GM85.valid_idx_filtered.pairs S288C.hic sacCer3
 
 ### ----------  Run Hic-Pro 
+
 # extflow run nf-core/hic --input 'data/HiC/CH112_R{1,2}.fastq.gz' \
 #    -profile singularity \
 #    --genome R64-1-1 \

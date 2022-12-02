@@ -1,4 +1,5 @@
-l <- list(
+# -- Example datasets
+toydata <- list(
     list(Title = "WT yeast Hi-C paired-end seq reads (R1)",
         Description = "Hi-C performed on wild-type S288C yeast strain. Only the first 100,000 reads from R1 are recovered. Data recovered from SRA run results SRR13994279.",
         BiocVersion = "3.16",
@@ -14,7 +15,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/HiC_wt_yeast.R1.fq.gz",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "WT yeast Hi-C paired-end seq reads (R2)",
         Description = "Hi-C performed on wild-type S288C yeast strain. Only the first 100,000 reads from R2 are recovered. Data recovered from SRA run results SRR13994279.",
@@ -31,7 +32,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/HiC_wt_yeast.R2.fq.gz",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "WT yeast Hi-C HiCool processing log",
         Description = "Hi-C performed on wild-type S288C yeast strain. Only the first 100,000 reads from R{1,2} are recovered. Reads were mapped onto S288c genome reference using HiCool. Data recovered from SRA run results SRR13994279.",
@@ -48,7 +49,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/HiC_wt_yeast.HiCool.log",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ),
     list(Title = "WT yeast .pairs file",
         Description = "Hi-C performed on wild-type S288C yeast strain processed with tinyMapper and represented as a filtered pairs file. Data representation derived from SRA run results SRR13994279.",
@@ -65,7 +66,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/S288C.pairs.gz",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "WT yeast .cool contact matrix @ 1kb",
        Description = "Hi-C performed on wild-type S288C yeast strain processed with tinyMapper and represented as a single-resolution .cool file. Data representation derived from SRA run results SRR13994279.",
@@ -82,7 +83,7 @@ l <- list(
        RDataClass = "character",
        DispatchClass = "FilePath",
        RDataPath = "HiContactsData/S288C.cool",
-       Tags = "HiCDdata"
+       Tags = "HiCData"
     ), 
     list(Title = "WT yeast .mcool contact matrix",
        Description = "Hi-C performed on wild-type S288C yeast strain processed with tinyMapper and represented as a multi-resolution .mcool file. Data representation derived from SRA run results SRR13994279.",
@@ -99,7 +100,7 @@ l <- list(
        RDataClass = "character",
        DispatchClass = "FilePath",
        RDataPath = "HiContactsData/S288C.mcool",
-       Tags = "HiCDdata"
+       Tags = "HiCData"
     ), 
     list(Title = "WT yeast .hic contact matrix",
         Description = "Hi-C performed on wild-type S288C yeast strain processed with Juicer and represented as a multi-resolution .hic file. Data representation derived from SRA run results SRR13994279.",
@@ -116,7 +117,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/S288C.hic",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "WT yeast HiC-Pro matrix file @ 1kb",
         Description = "Hi-C performed on wild-type S288C yeast strain processed with `nf-core/hic` and represented as a single resolution matrix file. Data representation derived from SRA run results SRR13994279.",
@@ -133,7 +134,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/S288C.hicpro.matrix",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "WT yeast HiC-Pro bed file @ 1kb",
         Description = "Hi-C performed on wild-type S288C yeast strain processed with `nf-core/hic` and represented as a single resolution bed file. Data representation derived from SRA run results SRR13994279.",
@@ -150,7 +151,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/S288C.hicpro.bed",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "WT yeast HiC-Pro bed file @ 1kb",
         Description = "Hi-C performed on wild-type S288C yeast strain processed with `nf-core/hic` and represented as a single resolution bed file. Data representation derived from SRA run results SRR13994279.",
@@ -167,7 +168,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/S288C.hicpro.allValidPairs",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "Eco1-AID yeast .mcool contact matrix",
         Description = "Hi-C performed on Eco1-AID mutant yeast strain upon IAA treatment processed with tinyMapper and represented as a multi-resolution mcool file. Data representation derived from SRA run results SRR16250953.",
@@ -184,7 +185,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/S288C_Eco1-AID.mcool",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "Eco1-AID yeast .pairs file",
         Description = "Hi-C performed on Eco1-AID mutant yeast strain upon IAA treatment processed with tinyMapper and represented as a filtered pairs file. Data representation derived from SRA run results SRR16250953.",
@@ -201,7 +202,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/S288C_Eco1-AID.pairs.gz",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "mESC .mcool contact matrix",
         Description = "Hi-C performed on mouse embryonic stem cells (mESCs) processed with tinyMapper and represented as a multi-resolution mcool file. Data representation derived from SRA run results SRR5339749.",
@@ -218,7 +219,7 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/mESCs.mcool",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     ), 
     list(Title = "mESC .pairs contact matrix",
         Description = "Hi-C performed on mouse embryonic stem cells (mESCs) processed with tinyMapper and represented as a filtered pairs file. Data representation derived from SRA run results SRR5339749.",
@@ -235,12 +236,12 @@ l <- list(
         RDataClass = "character",
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/mESCs.pairs.gz",
-        Tags = "HiCDdata"
+        Tags = "HiCData"
     )
 )
+toydata <- do.call(rbind, toydata) |> as.data.frame() |> apply(2, unlist) |> as.data.frame()
+toydata$BiocVersion <- as.numeric(toydata$BiocVersion)
+toydata$TaxonomyId <- as.numeric(toydata$TaxonomyId)
 
-x <- do.call(rbind, l) |> as.data.frame() |> apply(2, unlist) |> as.data.frame()
-x$BiocVersion <- as.numeric(x$BiocVersion)
-x$TaxonomyId <- as.numeric(x$TaxonomyId)
-
-write.csv(x, file = "inst/extdata/metadata.csv", row.names = FALSE)
+# -- Cat everything
+write.csv(toydata, file = "inst/extdata/metadata.csv", row.names = FALSE)
