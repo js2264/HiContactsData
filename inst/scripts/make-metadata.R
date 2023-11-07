@@ -237,6 +237,23 @@ toydata <- list(
         DispatchClass = "FilePath",
         RDataPath = "HiContactsData/mESCs.pairs.gz",
         Tags = "HiCData"
+    ), 
+    list(Title = "HFFc6 .mcool contact matrix",
+        Description = "Hi-C performed on Human foreskin fibroblast cell line (HFFc6). Data obtained from 4DN data portal (ID 4DNFI9FVHJZQ) and filtered to only retain chr17.",
+        BiocVersion = "3.16",
+        Genome = "GRCh38",
+        SourceType = "HDF5",
+        SourceUrl = "https://data.4dnucleome.org/files-processed/4DNFI9FVHJZQ/",
+        SourceVersion = "Aug 17 2022",
+        Species = "Homo sapiens",
+        TaxonomyId = "9606",
+        Coordinate_1_based = "FALSE",
+        DataProvider = "Jacques Serizay",
+        Maintainer = "Jacques Serizay <jacquesserizay@gmail.com>",
+        RDataClass = "character",
+        DispatchClass = "FilePath",
+        RDataPath = "HiContactsData/microC_HFFc6_chr17.mcool",
+        Tags = "HiCData"
     )
 )
 toydata <- do.call(rbind, toydata) |> as.data.frame() |> apply(2, unlist) |> as.data.frame()

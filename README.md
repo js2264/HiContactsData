@@ -28,3 +28,6 @@ Several files are avaible using this function, namely:
 - From [Bonev et al., Cell 2017](https://doi.org/10.1016/j.cell.2017.09.043):
   - mESCs.mcool (`sample`: `mESCs`, `format` = `mcool`)
   - mESCs.pairs.gz for chr13 only (`sample`: `mESCs`, `format` = `pairs`)
+
+- From [Krietenstein et al., Mol. Cell 2020](https://doi.org/10.1016/j.molcel.2020.03.003):
+  - microC_HFFc6_chr17.mcool (`sample`: `microC`, `format` = `mcool`)

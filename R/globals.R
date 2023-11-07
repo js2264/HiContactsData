@@ -12,7 +12,8 @@ HiContactsDataFiles <- rbind(
     c('yeast_eco1', 'mcool', 'S288C', 'Eco1-AID+IAA', 'multi-res .mcool file', 'EH7704'),
     c('yeast_eco1', 'pairs.gz', 'S288C', 'Eco1-AID+IAA', 'only pairs from chrII are provided', 'EH7705'),
     c('mESCs', 'mcool', 'mm10', 'mESCs', 'multi-res .mcool file', 'EH7706'),
-    c('mESCs', 'pairs.gz', 'mm10', 'mESCs', 'only pairs from chr13 are provided', 'EH7707')
+    c('mESCs', 'pairs.gz', 'mm10', 'mESCs', 'only pairs from chr13 are provided', 'EH7707'), 
+    c('microC', 'mcool', 'GRCh38', 'HFFc6', 'multi-res .mcool file, only chr17 is provided', '')
 )
 colnames(HiContactsDataFiles) <- c(
     'sample', 'format', 'genome', 'condition', 'notes', 'EHID'

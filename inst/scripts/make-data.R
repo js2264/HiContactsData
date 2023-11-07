@@ -15,7 +15,7 @@
 
 # curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/009/SRR5339749/SRR5339749_1.fastq.gz -o mESCs_R1.fq.gz
 # curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR533/009/SRR5339749/SRR5339749_2.fastq.gz -o mESC_R2.fq.gz
-# tinyMapper.sh --mode HiC --sample mESCs --genome ~/genomes/mm10/mm10 --output HiC --threads 16 --resolutions 10000,20000,40000,80000,160000,320000,640000,1280000,2560000
+# tinyMapper.sh --mode HiC --sample mESCs --genome ~/genomes/mm10/mm10 --output HiC --threads 16 --resolutions 10000
 
 ### ----------  Subset and compress files
 
@@ -58,3 +58,10 @@
 #    --hicpro_maps \
 #    --max_cpus 18 \
 #    --max_memory '32.GB'
+
+### ----------  Filter microC mcool
+
+# cooler dump -t chroms /.cache/R/fourDNData/4d434d8538a0_4DNFI9FVHJZQ.mcool::/resolutions/250000 | grep -P 'chr17\t' > inst/extdata/chromsizes
+# cooler dump -t pixels -r chr17 --join /.cache/R/fourDNData/4d434d8538a0_4DNFI9FVHJZQ.mcool::/resolutions/5000 > inst/extdata/chr17_5000.bg2
+# cooler cload pairs inst/extdata/chromsizes:5000 inst/extdata/chr17_5000.bg2 -c1 1 -p1 2 -c2 4 -p2 5 -0 inst/extdata/chr17.cool
+# cooler zoomify --resolutions 5000,100000,250000 --balance inst/extdata/chr17.cool -o inst/extdata/chr17.mcool

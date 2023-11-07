@@ -45,9 +45,11 @@ Several files are avaible using this function, namely:
 - S288C_Eco1-AID.pairs.gz for chrII only (`sample`: `yeast_Eco1`, `format` = `pairs`)
 - mESCs.mcool (`sample`: `mESCs`, `format` = `mcool`)
 - mESCs.pairs.gz for chr13 only (`sample`: `mESCs`, `format` = `pairs`)
+- microC_HFFc6_chr17.mcool (`sample`: `microC`, `format` = `mcool`)
 
 Yeast data comes from [Bastie, Chapard et al., Nature Structural & Molecular Biology 2022](https://doi.org/10.1038/s41594-022-00780-0) 
-and mouse ESC data comes from [Bonev et al., Cell 2017](https://doi.org/10.1016/j.cell.2017.09.043).
+and mouse ESC data comes from [Bonev et al., Cell 2017](https://doi.org/10.1016/j.cell.2017.09.043). 
+Human HcFF6 micro-C data comes from [Krietenstein et al., Mol. Cell 2020](https://doi.org/10.1016/j.molcel.2020.03.003).
 
 To download one of these files, one can specify a `sample` and a file `format`:
 
