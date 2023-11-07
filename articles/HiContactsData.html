@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">HiContactsData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,11 +116,14 @@ function, namely:</p>
 <code>format</code> = <code>mcool</code>)</li>
 <li>mESCs.pairs.gz for chr13 only (<code>sample</code>:
 <code>mESCs</code>, <code>format</code> = <code>pairs</code>)</li>
+<li>microC_HFFc6_chr17.mcool (<code>sample</code>: <code>microC</code>,
+<code>format</code> = <code>mcool</code>)</li>
 </ul>
 <p>Yeast data comes from <a href="https://doi.org/10.1038/s41594-022-00780-0" class="external-link">Bastie, Chapard et
 al., Nature Structural &amp; Molecular Biology 2022</a> and mouse ESC
 data comes from <a href="https://doi.org/10.1016/j.cell.2017.09.043" class="external-link">Bonev et al., Cell
-2017</a>.</p>
+2017</a>. Human HcFF6 micro-C data comes from <a href="https://doi.org/10.1016/j.molcel.2020.03.003" class="external-link">Krietenstein et al.,
+Mol. Cell 2020</a>.</p>
 <p>To download one of these files, one can specify a <code>sample</code>
 and a file <code>format</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -141,28 +144,30 @@ and a file <code>format</code>:</p>
 <span><span class="co">#&gt; 12 yeast_eco1      pairs.gz  S288C Eco1-AID+IAA</span></span>
 <span><span class="co">#&gt; 13      mESCs         mcool   mm10        mESCs</span></span>
 <span><span class="co">#&gt; 14      mESCs      pairs.gz   mm10        mESCs</span></span>
-<span><span class="co">#&gt;                                 notes   EHID</span></span>
-<span><span class="co">#&gt; 1                          fastq (R1) EH7783</span></span>
-<span><span class="co">#&gt; 2                          fastq (R2) EH7784</span></span>
-<span><span class="co">#&gt; 3                     HiCool log file EH7785</span></span>
-<span><span class="co">#&gt; 4  only pairs from chrII are provided EH7703</span></span>
-<span><span class="co">#&gt; 5      .cool file @ resolution of 1kb EH7701</span></span>
-<span><span class="co">#&gt; 6               multi-res .mcool file EH7702</span></span>
-<span><span class="co">#&gt; 7                 multi-res .hic file EH7786</span></span>
-<span><span class="co">#&gt; 8           HiC-Pro matrix file @ 1kb EH7787</span></span>
-<span><span class="co">#&gt; 9              HiC-Pro bed file @ 1kb EH7788</span></span>
-<span><span class="co">#&gt; 10        HiC-Pro .allValidPairs file EH7789</span></span>
-<span><span class="co">#&gt; 11              multi-res .mcool file EH7704</span></span>
-<span><span class="co">#&gt; 12 only pairs from chrII are provided EH7705</span></span>
-<span><span class="co">#&gt; 13              multi-res .mcool file EH7706</span></span>
-<span><span class="co">#&gt; 14 only pairs from chr13 are provided EH7707</span></span>
+<span><span class="co">#&gt; 15     microC         mcool GRCh38        HFFc6</span></span>
+<span><span class="co">#&gt;                                            notes   EHID</span></span>
+<span><span class="co">#&gt; 1                                     fastq (R1) EH7783</span></span>
+<span><span class="co">#&gt; 2                                     fastq (R2) EH7784</span></span>
+<span><span class="co">#&gt; 3                                HiCool log file EH7785</span></span>
+<span><span class="co">#&gt; 4             only pairs from chrII are provided EH7703</span></span>
+<span><span class="co">#&gt; 5                 .cool file @ resolution of 1kb EH7701</span></span>
+<span><span class="co">#&gt; 6                          multi-res .mcool file EH7702</span></span>
+<span><span class="co">#&gt; 7                            multi-res .hic file EH7786</span></span>
+<span><span class="co">#&gt; 8                      HiC-Pro matrix file @ 1kb EH7787</span></span>
+<span><span class="co">#&gt; 9                         HiC-Pro bed file @ 1kb EH7788</span></span>
+<span><span class="co">#&gt; 10                   HiC-Pro .allValidPairs file EH7789</span></span>
+<span><span class="co">#&gt; 11                         multi-res .mcool file EH7704</span></span>
+<span><span class="co">#&gt; 12            only pairs from chrII are provided EH7705</span></span>
+<span><span class="co">#&gt; 13                         multi-res .mcool file EH7706</span></span>
+<span><span class="co">#&gt; 14            only pairs from chr13 are provided EH7707</span></span>
+<span><span class="co">#&gt; 15 multi-res .mcool file, only chr17 is provided</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="va">cool_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/HiContactsData.html">HiContactsData</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="st">'yeast_wt'</span>, format <span class="op">=</span> <span class="st">'cool'</span><span class="op">)</span></span>
 <span><span class="co">#&gt; see ?HiContactsData and browseVignettes('HiContactsData') for documentation</span></span>
 <span><span class="co">#&gt; loading from cache</span></span>
 <span><span class="va">cool_file</span></span>
 <span><span class="co">#&gt;                                                  EH7701 </span></span>
-<span><span class="co">#&gt; "/github/home/.cache/R/ExperimentHub/1c033e89d81c_7751"</span></span></code></pre></div>
+<span><span class="co">#&gt; "/github/home/.cache/R/ExperimentHub/1c0c2b77d133_7751"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="hicontacts-and-hicontactsdata">HiContacts and HiContactsData<a class="anchor" aria-label="anchor" href="#hicontacts-and-hicontactsdata"></a>
@@ -200,7 +205,7 @@ information.</p>
 <span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt; [1] HiContactsData_1.5.0 ExperimentHub_2.11.0 AnnotationHub_3.11.0</span></span>
+<span><span class="co">#&gt; [1] HiContactsData_1.5.1 ExperimentHub_2.11.0 AnnotationHub_3.11.0</span></span>
 <span><span class="co">#&gt; [4] BiocFileCache_2.11.1 dbplyr_2.4.0         BiocGenerics_0.49.1 </span></span>
 <span><span class="co">#&gt; [7] BiocStyle_2.31.0    </span></span>
 <span><span class="co">#&gt; </span></span>
