@@ -240,7 +240,7 @@ toydata <- list(
     ), 
     list(Title = "HFFc6 .mcool contact matrix",
         Description = "Hi-C performed on Human foreskin fibroblast cell line (HFFc6). Data obtained from 4DN data portal (ID 4DNFI9FVHJZQ) and filtered to only retain chr17.",
-        BiocVersion = "3.16",
+        BiocVersion = "3.19",
         Genome = "GRCh38",
         SourceType = "HDF5",
         SourceUrl = "https://data.4dnucleome.org/files-processed/4DNFI9FVHJZQ/",
