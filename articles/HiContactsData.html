@@ -8,8 +8,8 @@
 <meta name="description" content="HiContactsData">
 <title>HiContactsData • HiContactsData</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="HiContactsData">
 <meta property="og:description" content="HiContactsData">
@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">HiContactsData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +69,7 @@
                         <h4 data-toc-skip class="author">Jacques
 Serizay</h4>
             
-            <h4 data-toc-skip class="date">2023-11-15</h4>
+            <h4 data-toc-skip class="date">2024-01-16</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/js2264/HiContactsData/blob/HEAD/vignettes/HiContactsData.Rmd" class="external-link"><code>vignettes/HiContactsData.Rmd</code></a></small>
       <div class="d-none name"><code>HiContactsData.Rmd</code></div>
@@ -87,7 +87,7 @@ and pairs files. It is meant to be used with
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/js2264/HiContactsData" class="external-link">HiContactsData</a></span><span class="op">)</span></span></code></pre></div>
 <p>The only function provided by HiContactsData package is
-<code><a href="../reference/HiContactsData.html">HiContactsData()</a></code>. Several files are avaible using this
+<code><a href="../reference/HiContactsData.html">HiContactsData()</a></code>. Several files are available using this
 function, namely:</p>
 <ul>
 <li>S288C fastq files (R1 &amp; R2) (<code>sample</code>:
@@ -100,6 +100,14 @@ function, namely:</p>
 <code>format</code> = <code>cool</code>)</li>
 <li>S288C.mcool (<code>sample</code>: <code>yeast_wt</code>,
 <code>format</code> = <code>mcool</code>)</li>
+<li>S288C_G1.mcool (<code>sample</code>: <code>yeast_g1</code>,
+<code>format</code> = <code>mcool</code>)</li>
+<li>S288C_G2M.mcool (<code>sample</code>: <code>yeast_g1</code>,
+<code>format</code> = <code>mcool</code>)</li>
+<li>S288C_G1.pairs (<code>sample</code>: <code>yeast_g2m</code>,
+<code>format</code> = <code>pairs</code>)</li>
+<li>S288C_G2M.pairs (<code>sample</code>: <code>yeast_g2m</code>,
+<code>format</code> = <code>pairs</code>)</li>
 <li>S288C.hic (<code>sample</code>: <code>yeast_wt</code>,
 <code>format</code> = <code>hic</code>)</li>
 <li>S288C.hicpro.matrix (<code>sample</code>: <code>yeast_wt</code>,
@@ -136,15 +144,19 @@ and a file <code>format</code>:</p>
 <span><span class="co">#&gt; 4    yeast_wt      pairs.gz  S288C    wild-type</span></span>
 <span><span class="co">#&gt; 5    yeast_wt          cool  S288C    wild-type</span></span>
 <span><span class="co">#&gt; 6    yeast_wt         mcool  S288C    wild-type</span></span>
-<span><span class="co">#&gt; 7    yeast_wt           hic  S288C    wild-type</span></span>
-<span><span class="co">#&gt; 8    yeast_wt hicpro_matrix  S288C    wild-type</span></span>
-<span><span class="co">#&gt; 9    yeast_wt    hicpro_bed  S288C    wild-type</span></span>
-<span><span class="co">#&gt; 10   yeast_wt  hicpro_pairs  S288C    wild-type</span></span>
-<span><span class="co">#&gt; 11 yeast_eco1         mcool  S288C Eco1-AID+IAA</span></span>
-<span><span class="co">#&gt; 12 yeast_eco1      pairs.gz  S288C Eco1-AID+IAA</span></span>
-<span><span class="co">#&gt; 13      mESCs         mcool   mm10        mESCs</span></span>
-<span><span class="co">#&gt; 14      mESCs      pairs.gz   mm10        mESCs</span></span>
-<span><span class="co">#&gt; 15     microC         mcool GRCh38        HFFc6</span></span>
+<span><span class="co">#&gt; 7    yeast_g1         mcool  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 8    yeast_g1         pairs  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 9   yeast_g2m         mcool  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 10  yeast_g2m         pairs  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 11   yeast_wt           hic  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 12   yeast_wt hicpro_matrix  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 13   yeast_wt    hicpro_bed  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 14   yeast_wt  hicpro_pairs  S288C    wild-type</span></span>
+<span><span class="co">#&gt; 15 yeast_eco1         mcool  S288C Eco1-AID+IAA</span></span>
+<span><span class="co">#&gt; 16 yeast_eco1      pairs.gz  S288C Eco1-AID+IAA</span></span>
+<span><span class="co">#&gt; 17      mESCs         mcool   mm10        mESCs</span></span>
+<span><span class="co">#&gt; 18      mESCs      pairs.gz   mm10        mESCs</span></span>
+<span><span class="co">#&gt; 19     microC         mcool GRCh38        HFFc6</span></span>
 <span><span class="co">#&gt;                                            notes   EHID</span></span>
 <span><span class="co">#&gt; 1                                     fastq (R1) EH7783</span></span>
 <span><span class="co">#&gt; 2                                     fastq (R2) EH7784</span></span>
@@ -152,22 +164,26 @@ and a file <code>format</code>:</p>
 <span><span class="co">#&gt; 4             only pairs from chrII are provided EH7703</span></span>
 <span><span class="co">#&gt; 5                 .cool file @ resolution of 1kb EH7701</span></span>
 <span><span class="co">#&gt; 6                          multi-res .mcool file EH7702</span></span>
-<span><span class="co">#&gt; 7                            multi-res .hic file EH7786</span></span>
-<span><span class="co">#&gt; 8                      HiC-Pro matrix file @ 1kb EH7787</span></span>
-<span><span class="co">#&gt; 9                         HiC-Pro bed file @ 1kb EH7788</span></span>
-<span><span class="co">#&gt; 10                   HiC-Pro .allValidPairs file EH7789</span></span>
-<span><span class="co">#&gt; 11                         multi-res .mcool file EH7704</span></span>
-<span><span class="co">#&gt; 12            only pairs from chrII are provided EH7705</span></span>
-<span><span class="co">#&gt; 13                         multi-res .mcool file EH7706</span></span>
-<span><span class="co">#&gt; 14            only pairs from chr13 are provided EH7707</span></span>
-<span><span class="co">#&gt; 15 multi-res .mcool file, only chr17 is provided EH8535</span></span>
+<span><span class="co">#&gt; 7                          multi-res .mcool file EH8562</span></span>
+<span><span class="co">#&gt; 8                    filtered pairs are provided EH8564</span></span>
+<span><span class="co">#&gt; 9                          multi-res .mcool file EH8563</span></span>
+<span><span class="co">#&gt; 10                   filtered pairs are provided EH8565</span></span>
+<span><span class="co">#&gt; 11                           multi-res .hic file EH7786</span></span>
+<span><span class="co">#&gt; 12                     HiC-Pro matrix file @ 1kb EH7787</span></span>
+<span><span class="co">#&gt; 13                        HiC-Pro bed file @ 1kb EH7788</span></span>
+<span><span class="co">#&gt; 14                   HiC-Pro .allValidPairs file EH7789</span></span>
+<span><span class="co">#&gt; 15                         multi-res .mcool file EH7704</span></span>
+<span><span class="co">#&gt; 16            only pairs from chrII are provided EH7705</span></span>
+<span><span class="co">#&gt; 17                         multi-res .mcool file EH7706</span></span>
+<span><span class="co">#&gt; 18            only pairs from chr13 are provided EH7707</span></span>
+<span><span class="co">#&gt; 19 multi-res .mcool file, only chr17 is provided EH8535</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="va">cool_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/HiContactsData.html">HiContactsData</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="st">'yeast_wt'</span>, format <span class="op">=</span> <span class="st">'cool'</span><span class="op">)</span></span>
 <span><span class="co">#&gt; see ?HiContactsData and browseVignettes('HiContactsData') for documentation</span></span>
 <span><span class="co">#&gt; loading from cache</span></span>
 <span><span class="va">cool_file</span></span>
-<span><span class="co">#&gt;                                                 EH7701 </span></span>
-<span><span class="co">#&gt; "/github/home/.cache/R/ExperimentHub/c181bc9c5ac_7751"</span></span></code></pre></div>
+<span><span class="co">#&gt;                                                  EH7701 </span></span>
+<span><span class="co">#&gt; "/github/home/.cache/R/ExperimentHub/1ba73bc4fbc4_7751"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="hicontacts-and-hicontactsdata">HiContacts and HiContactsData<a class="anchor" aria-label="anchor" href="#hicontacts-and-hicontactsdata"></a>
@@ -182,7 +198,7 @@ information.</p>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; R Under development (unstable) (2023-11-08 r85496)</span></span>
+<span><span class="co">#&gt; R Under development (unstable) (2024-01-09 r85796)</span></span>
 <span><span class="co">#&gt; Platform: x86_64-pc-linux-gnu</span></span>
 <span><span class="co">#&gt; Running under: Ubuntu 22.04.3 LTS</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -205,50 +221,34 @@ information.</p>
 <span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt; [1] HiContactsData_1.5.2 ExperimentHub_2.11.0 AnnotationHub_3.11.0</span></span>
+<span><span class="co">#&gt; [1] HiContactsData_1.5.3 ExperimentHub_2.11.1 AnnotationHub_3.11.1</span></span>
 <span><span class="co">#&gt; [4] BiocFileCache_2.11.1 dbplyr_2.4.0         BiocGenerics_0.49.1 </span></span>
 <span><span class="co">#&gt; [7] BiocStyle_2.31.0    </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
-<span><span class="co">#&gt;  [1] KEGGREST_1.43.0               xfun_0.41                    </span></span>
-<span><span class="co">#&gt;  [3] bslib_0.5.1                   Biobase_2.63.0               </span></span>
-<span><span class="co">#&gt;  [5] bitops_1.0-7                  vctrs_0.6.4                  </span></span>
-<span><span class="co">#&gt;  [7] tools_4.4.0                   generics_0.1.3               </span></span>
-<span><span class="co">#&gt;  [9] stats4_4.4.0                  curl_5.1.0                   </span></span>
-<span><span class="co">#&gt; [11] AnnotationDbi_1.65.2          tibble_3.2.1                 </span></span>
-<span><span class="co">#&gt; [13] fansi_1.0.5                   RSQLite_2.3.3                </span></span>
-<span><span class="co">#&gt; [15] blob_1.2.4                    pkgconfig_2.0.3              </span></span>
-<span><span class="co">#&gt; [17] desc_1.4.2                    S4Vectors_0.41.1             </span></span>
-<span><span class="co">#&gt; [19] GenomeInfoDbData_1.2.11       lifecycle_1.0.4              </span></span>
-<span><span class="co">#&gt; [21] compiler_4.4.0                stringr_1.5.1                </span></span>
-<span><span class="co">#&gt; [23] Biostrings_2.71.1             textshaping_0.3.7            </span></span>
-<span><span class="co">#&gt; [25] GenomeInfoDb_1.39.1           httpuv_1.6.12                </span></span>
-<span><span class="co">#&gt; [27] htmltools_0.5.7               sass_0.4.7                   </span></span>
-<span><span class="co">#&gt; [29] RCurl_1.98-1.13               yaml_2.3.7                   </span></span>
-<span><span class="co">#&gt; [31] interactiveDisplayBase_1.41.0 crayon_1.5.2                 </span></span>
-<span><span class="co">#&gt; [33] pillar_1.9.0                  pkgdown_2.0.7.9000           </span></span>
-<span><span class="co">#&gt; [35] later_1.3.1                   jquerylib_0.1.4              </span></span>
-<span><span class="co">#&gt; [37] ellipsis_0.3.2                cachem_1.0.8                 </span></span>
-<span><span class="co">#&gt; [39] mime_0.12                     tidyselect_1.2.0             </span></span>
-<span><span class="co">#&gt; [41] digest_0.6.33                 stringi_1.8.1                </span></span>
-<span><span class="co">#&gt; [43] dplyr_1.1.3                   purrr_1.0.2                  </span></span>
-<span><span class="co">#&gt; [45] bookdown_0.36                 BiocVersion_3.19.1           </span></span>
-<span><span class="co">#&gt; [47] rprojroot_2.0.4               fastmap_1.1.1                </span></span>
-<span><span class="co">#&gt; [49] cli_3.6.1                     magrittr_2.0.3               </span></span>
-<span><span class="co">#&gt; [51] utf8_1.2.4                    withr_2.5.2                  </span></span>
-<span><span class="co">#&gt; [53] filelock_1.0.2                promises_1.2.1               </span></span>
-<span><span class="co">#&gt; [55] rappdirs_0.3.3                bit64_4.0.5                  </span></span>
-<span><span class="co">#&gt; [57] XVector_0.43.0                rmarkdown_2.25               </span></span>
-<span><span class="co">#&gt; [59] httr_1.4.7                    bit_4.0.5                    </span></span>
-<span><span class="co">#&gt; [61] png_0.1-8                     ragg_1.2.6                   </span></span>
-<span><span class="co">#&gt; [63] memoise_2.0.1                 shiny_1.7.5.1                </span></span>
-<span><span class="co">#&gt; [65] evaluate_0.23                 knitr_1.45                   </span></span>
-<span><span class="co">#&gt; [67] IRanges_2.37.0                rlang_1.1.2                  </span></span>
-<span><span class="co">#&gt; [69] Rcpp_1.0.11                   xtable_1.8-4                 </span></span>
-<span><span class="co">#&gt; [71] glue_1.6.2                    DBI_1.1.3                    </span></span>
-<span><span class="co">#&gt; [73] BiocManager_1.30.22           jsonlite_1.8.7               </span></span>
-<span><span class="co">#&gt; [75] R6_2.5.1                      zlibbioc_1.49.0              </span></span>
-<span><span class="co">#&gt; [77] systemfonts_1.0.5             fs_1.6.3</span></span></code></pre></div>
+<span><span class="co">#&gt;  [1] KEGGREST_1.43.0         xfun_0.41               bslib_0.6.1            </span></span>
+<span><span class="co">#&gt;  [4] Biobase_2.63.0          bitops_1.0-7            vctrs_0.6.5            </span></span>
+<span><span class="co">#&gt;  [7] tools_4.4.0             generics_0.1.3          stats4_4.4.0           </span></span>
+<span><span class="co">#&gt; [10] curl_5.2.0              tibble_3.2.1            fansi_1.0.6            </span></span>
+<span><span class="co">#&gt; [13] AnnotationDbi_1.65.2    RSQLite_2.3.4           blob_1.2.4             </span></span>
+<span><span class="co">#&gt; [16] pkgconfig_2.0.3         desc_1.4.3              S4Vectors_0.41.3       </span></span>
+<span><span class="co">#&gt; [19] GenomeInfoDbData_1.2.11 lifecycle_1.0.4         compiler_4.4.0         </span></span>
+<span><span class="co">#&gt; [22] stringr_1.5.1           textshaping_0.3.7       Biostrings_2.71.1      </span></span>
+<span><span class="co">#&gt; [25] GenomeInfoDb_1.39.5     htmltools_0.5.7         sass_0.4.8             </span></span>
+<span><span class="co">#&gt; [28] RCurl_1.98-1.14         yaml_2.3.8              pillar_1.9.0           </span></span>
+<span><span class="co">#&gt; [31] pkgdown_2.0.7.9000      crayon_1.5.2            jquerylib_0.1.4        </span></span>
+<span><span class="co">#&gt; [34] cachem_1.0.8            mime_0.12               tidyselect_1.2.0       </span></span>
+<span><span class="co">#&gt; [37] digest_0.6.34           stringi_1.8.3           dplyr_1.1.4            </span></span>
+<span><span class="co">#&gt; [40] purrr_1.0.2             bookdown_0.37           BiocVersion_3.19.1     </span></span>
+<span><span class="co">#&gt; [43] fastmap_1.1.1           cli_3.6.2               magrittr_2.0.3         </span></span>
+<span><span class="co">#&gt; [46] utf8_1.2.4              withr_3.0.0             filelock_1.0.3         </span></span>
+<span><span class="co">#&gt; [49] rappdirs_0.3.3          bit64_4.0.5             rmarkdown_2.25         </span></span>
+<span><span class="co">#&gt; [52] XVector_0.43.1          httr_1.4.7              bit_4.0.5              </span></span>
+<span><span class="co">#&gt; [55] ragg_1.2.7              png_0.1-8               memoise_2.0.1          </span></span>
+<span><span class="co">#&gt; [58] evaluate_0.23           knitr_1.45              IRanges_2.37.0         </span></span>
+<span><span class="co">#&gt; [61] rlang_1.1.3             glue_1.7.0              DBI_1.2.1              </span></span>
+<span><span class="co">#&gt; [64] BiocManager_1.30.22     jsonlite_1.8.8          R6_2.5.1               </span></span>
+<span><span class="co">#&gt; [67] systemfonts_1.0.5       fs_1.6.3                zlibbioc_1.49.0</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
