@@ -31,12 +31,16 @@ library(HiContactsData)
 ```
 
 The only function provided by HiContactsData package is `HiContactsData()`. 
-Several files are avaible using this function, namely: 
+Several files are available using this function, namely: 
 
 - S288C fastq files (R1 & R2) (`sample`: `yeast_wt`, `format` = `fastq_R{12}`)
 - S288C HiCool processing log (`sample`: `yeast_wt`, `format` = `HiCool_log`)
 - S288C.cool (`sample`: `yeast_wt`, `format` = `cool`)
 - S288C.mcool (`sample`: `yeast_wt`, `format` = `mcool`)
+- S288C_G1.mcool (`sample`: `yeast_g1`, `format` = `mcool`)
+- S288C_G2M.mcool (`sample`: `yeast_g1`, `format` = `mcool`)
+- S288C_G1.pairs (`sample`: `yeast_g2m`, `format` = `pairs`)
+- S288C_G2M.pairs (`sample`: `yeast_g2m`, `format` = `pairs`)
 - S288C.hic (`sample`: `yeast_wt`, `format` = `hic`)
 - S288C.hicpro.matrix (`sample`: `yeast_wt`, `format` = `hicpro_matrix`)
 - S288C.hicpro.bed (`sample`: `yeast_wt`, `format` = `hicpro_bed`)
